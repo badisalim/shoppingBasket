@@ -1,12 +1,8 @@
-<p>
-  per-branch works!
-</p>
-
 <div class="container">
-  <h1>Basket4</h1>
+  <h1>Basket2</h1>
   <div class="container">
     <table>
-      <thead class="bg-danger text-white text-upparcase">
+      <thead class="bg-dzanger text-white text-upparcase">
         <tr>
           <th width="150" height="50">Branch Name</th>
           <th width="200">Product</th>
@@ -46,7 +42,7 @@
 
         </tr>
   </div>
-  <td><button class="btn btn-sm btn-primary rounded-0">Add Product</button></td>
+  <td><button type="button" (click)="addItem()" class="btn btn-sm btn-primary rounded-0">Add Product</button></td>
   <p>Total Branch:{{calculateBasketTotal(basket)}}</p>
   <tr>
 
@@ -59,9 +55,8 @@
   </tbody>
   </table>
   <tbody>
-    <p>Total Shop:{{calculateShopTotal(shop)}}</p>
+    <p>Total Shop: {{ calculateShopTotal(shop)}}</p>
   </tbody>
 
 </div>
 </div>
-
