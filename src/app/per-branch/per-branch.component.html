@@ -1,3 +1,67 @@
 <p>
   per-branch works!
 </p>
+
+<div class="container">
+  <h1>Basket4</h1>
+  <div class="container">
+    <table>
+      <thead class="bg-danger text-white text-upparcase">
+        <tr>
+          <th width="150" height="50">Branch Name</th>
+          <th width="200">Product</th>
+          <th width="200">Amount</th>
+          <th width="200">Price</th>
+          <th width="150">Total</th>
+          <th></th>
+        </tr>
+      </thead>
+    </table>
+    <table class="table table-bordered" *ngFor="let branch of shop">
+      <h3>{{branch.branch}}</h3>
+      <tbody>
+        <tr *ngFor="let basket of branch.baskets">
+          <td>{{basket.name}}</td>
+          <div *ngFor="let product of basket.products">
+            <!-- <th>product Total</th> -->
+            <td>
+              <input type="text" [value]="product.product" class="form-control">
+            </td>
+            <td>
+        <tr>
+          <!-- <th>Quantity</th> -->
+        </tr>
+        <input type="number" [value]="product.amount" min="1" class="form-control">
+        </td>
+        <td>
+          <tr>
+            <!-- <th>Price</th> -->
+          </tr> <input type="number" [value]="product.price" min="1" class="form-control">
+        </td>
+        <td></td>
+        <td>
+          <button class="btn btn-sm btn-danger"><img width="20px" src="../../assets/icon/trash.png" /></button>
+        </td>
+        <tr>
+
+        </tr>
+  </div>
+  <td><button class="btn btn-sm btn-primary rounded-0">Add Product</button></td>
+  <p>Total Branch:{{calculateBasketTotal(basket)}}</p>
+  <tr>
+
+    <td></td>
+    <p>Total Branches : {{ calculateBranchTotal(branch).toFixed(2) }}</p>
+
+    <td></td>
+  </tr>
+
+  </tbody>
+  </table>
+  <tbody>
+    <p>Total Shop:{{calculateShopTotal(shop)}}</p>
+  </tbody>
+
+</div>
+</div>
+
