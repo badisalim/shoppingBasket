@@ -1,3 +1,15 @@
 <p>
   link-product works!
 </p>
+<div class="row">
+  <div class="col-3">
+    <ul>
+      <li><a routerLink="/per-branch">Per Branch</a></li>
+      <li><a routerLink="/per-product">Per Product</a></li>
+      <li><a routerLink="/app/products">Product Administration</a></li>
+    </ul>
+  </div>
+  <div class="col-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>
