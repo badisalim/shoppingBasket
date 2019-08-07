@@ -1,21 +1,29 @@
 <p>
   per-product works!
 </p>
-<h2>Purchases per Product / Branch</h2>
+<h2>Per Product / Branch</h2>
+<div class="container">
 <ng-container *ngFor="let product of products">
-  <h3>{{ product.name }}</h3>
+ 
   <ng-container *ngFor="let branch of product.branches">
-    <h4>{{ branch.name }}</h4>
+   
     <table class="table">
-      <thead>
+      <thead class="bg-primary text-white text-upparcase">
         <tr>
-          <th>Basket</th>
-          <th>Product</th>
-          <th>Code</th>
-          <th>Amount</th>
-          <th>Price</th>
-        </tr>
+          <th width="150">Basket</th>
+          <th width="150">Product</th>
+          <th width="150">Code</th>
+          <th width="150">Amount</th>
+          <th width="150">Price</th>
+          <th width="150">Total</th>
+          <th></th>
+        </tr> <h3>{{ product.name }}</h3>
+ 
+
       </thead>
+      
+<h4>{{ branch.name }}</h4>
+      
       <tbody>
         <tr *ngFor="let basketItem of branch.basketItems">
           <td>{{ basketItem.branchName }}</td>
@@ -23,13 +31,15 @@
           <td>{{ basketItem.code }}</td>
           <td>{{ basketItem.amount }}</td>
           <td>{{ basketItem.price }}</td>
+          <td>{{  basketItem.amount*basketItem.price |currency:'€ ':'symbol':'1.2-2' }}</td>
         </tr>
       </tbody>
       <tfoot>
         <td colspan="3">Total Branch</td>
-        <td>{{ calculateBranchTotal(branch) }}</td>
+        <td>{{ calculateBranchTotal(branch)|currency:'€ ':'symbol':'1.2-2' }}</td>
       </tfoot>
     </table>
   </ng-container>
   <h4>Product Total: {{ calculateProductTotal(product) | currency: '€ ':'symbol':'1.2-2' }}</h4>
 </ng-container>
+</div>

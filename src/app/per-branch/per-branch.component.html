@@ -1,13 +1,13 @@
 <div class="container">
-  <h1>Basket2</h1>
+ <h1>Per-Branch</h1>
   <div class="container">
     <table>
-      <thead class="bg-dzanger text-white text-upparcase">
+      <thead class="bg-danger text-white text-upparcase">
         <tr>
           <th width="150" height="50">Branch Name</th>
-          <th width="200">Product</th>
-          <th width="200">Amount</th>
-          <th width="200">Price</th>
+          <th width="150">Product</th>
+          <th width="150">Amount</th>
+          <th width="150">Price</th>
           <th width="150">Total</th>
           <th></th>
         </tr>
@@ -34,6 +34,11 @@
             <!-- <th>Price</th> -->
           </tr> <input type="number" [value]="product.price" min="1" class="form-control">
         </td>
+        <td>
+          <tr>
+      </tr><input [value]="this.product.amount * this.product.price | currency:'$'"min="1" class="form-control"></td>
+       
+
         <td></td>
         <td>
           <button class="btn btn-sm btn-danger"><img width="20px" src="https://raw.githubusercontent.com/badisalim/shopping-card/master/src/assets/icons/trash.png" /></button>
@@ -42,14 +47,16 @@
 
         </tr>
   </div>
-  <td><button type="button" (click)="addItem()" class="btn btn-sm btn-primary rounded-0">Add Product</button></td>
+  <td><button type="button" (click)="addproduct()" class="btn btn-sm btn-primary rounded-0">Add Product</button></td>
   <p>Total Branch:{{calculateBasketTotal(basket)}}</p>
   <tr>
 
     <td></td>
     <p>Total Branches : {{ calculateBranchTotal(branch).toFixed(2) }}</p>
-
+ 
     <td></td>
+   
+
   </tr>
 
   </tbody>

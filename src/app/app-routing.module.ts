@@ -32,7 +32,7 @@ component: AddProductComponent
 },
 
 {
-  path: 'edit-product',
+  path: 'edit-product/:id',
   component: EditProductComponent
 },
 

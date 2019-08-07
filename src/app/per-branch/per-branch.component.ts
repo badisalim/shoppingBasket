@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { Product } from '../types';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'})};
@@ -79,6 +80,14 @@ export class PerBranchComponent implements OnInit {
     return baskets.reduce((one, two) => one + two);
 
   }
+
+
+  public calculateProductTotal(product) {
+    return product.branches.map(this.calculateBranchTotal).reduce((b1, b2) => b1 + b2);
+  }
+
+
+
 }
 
 

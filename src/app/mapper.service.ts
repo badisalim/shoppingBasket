@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Purchases, Branch, Basket, Product, FullBasketItem } from './types';
 import * as _ from 'lodash';
+// import { flattenDeep } from 'lodash';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MapperService {
-  constructor() {}
+  constructor() { }
 
   mapToBranches(purchases: Purchases): Branch[] {
     const branchNames = Object.keys(purchases);
