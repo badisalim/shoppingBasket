@@ -4,7 +4,9 @@ import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Product } from '../types';
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json'})};
+    'Content-Type': 'application/json'
+  })
+};
 
 @Component({
   selector: 'app-per-branch',
@@ -50,13 +52,13 @@ export class PerBranchComponent implements OnInit {
           products: [
             { product: 'juise', amount: 2, price: 1.5, code: 2549 },
             { product: 'Apple', amount: 2, price: 1.5, code: 2541 },
-            { product: 'chokolate', amount: 3, price: 2.5, code: 2540 }
+            { product: 'chokolateaaaaaaaaaaaaa', amount: 3333, price: 2.5, code: 2540 }
           ]
         }
       ]
     }
   ];
-  constructor(private http: HttpClientModule) { }
+  constructor() { }
 
 
   ngOnInit() {

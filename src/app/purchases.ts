@@ -79,7 +79,7 @@ export const purchases: Purchases = {
       },
       product2: {
         product: 'chocolate',
-        amount: 3,
+        amount: 5000000,
         price: 2.5,
         code: 2540
       }
